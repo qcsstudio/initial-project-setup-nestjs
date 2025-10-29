@@ -10,6 +10,8 @@ import { CommonModule } from './common/common.module';
 import { ConfigModule } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import { AuthService } from './auth/auth.service';
+import { LinkedinModule } from './linkedin/linkedin.module';
+import { PaymentModule } from './payment/payment.module';
 
 
 config()
@@ -27,7 +29,10 @@ const mongo_db_uri = process.env.MONGO_DB_URI;
     DatabaseModule,
     UsersModule,
     AuthModule,
-    CommonModule],
+    CommonModule,
+    LinkedinModule,
+    PaymentModule,
+    ],
   controllers: [AppController],
   providers: [
     AppService,
