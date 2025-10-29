@@ -6,7 +6,6 @@ import path from "path";
 import fs from "fs";
 // import twilio from "twilio";
 // import hbs = require("handlebars");
-import moment from 'moment';
 import * as Errors from "../handler/error.services";
 // import * as admin from 'firebase-admin';
 
@@ -339,7 +338,6 @@ export class CommonService implements OnModuleInit {
                 body: notification.body,
                 data: data,
                 notification_type: 'REMINDER',
-                created_at: moment().utc().valueOf()
             }
             await this.models.SendNotifications.create(create_notification);
             let string_data = data ? JSON.stringify(data) : {};

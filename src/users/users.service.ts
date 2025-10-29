@@ -4,9 +4,9 @@ import jwt from 'jsonwebtoken';
 import * as dto from './dto/signup'
 import { DatabaseService } from "../database/database.service";
 import * as Errors from "../handler/error.services";
-import moment from "moment";
 import { AuthService } from 'src/auth/auth.service';
 import { ConfigService } from '@nestjs/config';
+import axios from 'axios';
 
 @Injectable()
 export class UsersService {
