@@ -7,10 +7,10 @@ import * as Schema from './schemas/index'
 @Module({
   imports: [MongooseModule.forFeature([
     { name: 'users', schema: Schema.Users.UserSchema },
-    { name: 'otps', schema: Schema.Otps.OtpSchema },
+    // { name: 'otps', schema: Schema.Otps.OtpSchema },
     { name: 'sessions', schema: Schema.Sessions.SessionSchema },
-    { name: 'plans', schema: Schema.Plans.PlansSchema },
-    { name: 'subscriptions', schema: Schema.Subscription.SubscriptionSchema },
+    // { name: 'plans', schema: Schema.Plans.PlansSchema },
+    // { name: 'subscriptions', schema: Schema.Subscription.SubscriptionSchema },
     { name: 'send_notifications', schema: Schema.SendNotifications.SendNotificationsSchema },
   ])],
   // controllers: [DatabaseService],

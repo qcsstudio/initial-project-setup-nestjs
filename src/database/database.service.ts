@@ -6,11 +6,11 @@ import * as Schema from './schemas/index'
 @Injectable()
 export class DatabaseService {
     constructor(
-        @InjectModel('users') public Users: Model<Schema.Users.Users>,
-        @InjectModel('otps') public Otps: Model<Schema.Otps.Otp>,
+        @InjectModel('users') public Users: Model<Schema.Users.User>,
+        // @InjectModel('otps') public Otps: Model<Schema.Otps.Otp>,
         @InjectModel('sessions') public Sessions: Model<Schema.Sessions.Sessions>,
-        @InjectModel('subscriptions') public Subscriptions: Model<Schema.Subscription.Subscription>,
-        @InjectModel('plans') public Plan: Model<Schema.Plans.Plans>,
+        // @InjectModel('subscriptions') public Subscriptions: Model<Schema.Subscription.Subscription>,
+        // @InjectModel('plans') public Plan: Model<Schema.Plans.Plans>,
         @InjectModel('send_notifications') public SendNotifications: Model<Schema.SendNotifications.SendNotifications>,
     ) {
 

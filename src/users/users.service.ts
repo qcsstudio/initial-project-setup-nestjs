@@ -7,7 +7,6 @@ import * as Errors from "../handler/error.services";
 import moment from "moment";
 import { AuthService } from 'src/auth/auth.service';
 import { ConfigService } from '@nestjs/config';
-import { StripeService } from 'src/stripe/stripe.service';
 
 @Injectable()
 export class UsersService {
@@ -16,7 +15,6 @@ export class UsersService {
     constructor(
         @Inject(DatabaseService) private models: DatabaseService,
         @Inject(AuthService) private authService: AuthService,
-        @Inject(StripeService) private stripeService: StripeService,
     ) { }
 
     social_login = async (dto: dto.signup_social) => {
@@ -108,14 +106,14 @@ export class UsersService {
                     name: name,
                     email: email.toLowerCase()
                 }
-                let stripe_cus = await this.stripeService.createCustomer(create_stripe_customer);
+                // let stripe_cus = await this.stripeService.createCustomer(create_stripe_customer);
                 let create_user_data = {
                     name: name,
                     email: email.toLowerCase(),
                     social_login: true,
                     is_email_verified: true,
                     profile_pic: profile_pic ?? null,
-                    customer_id: stripe_cus?.id,
+                    // customer_id: stripe_cus?.id,
                     social_type: social_type,
                     sub_id: sub_id,
                     created_at: moment().utc().valueOf()

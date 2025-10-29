@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsArray, IsBoolean, IsEmail, IsEnum, IsMongoId, IsNotEmpty, IsNumber, IsOptional, IsString, IsStrongPassword, Length, Validate } from "class-validator";
-import { SocialType } from "src/database/schemas/users";
+// import { SocialType } from "src/database/schemas/users";
 
 
 export class signup_social {
@@ -15,7 +15,7 @@ export class signup_social {
     @IsNotEmpty({ message: "device type field is mandatory" })
     device_type: string;
 
-    @ApiProperty({ description: "Enter here social type", enum: Object.values(SocialType) })
+    // @ApiProperty({ description: "Enter here social type", enum: Object.values(SocialType) })
     @IsString()
     @IsNotEmpty({ message: "device type field is mandatory" })
     social_type: string;

@@ -30,7 +30,7 @@ async function bootstrap() {
   app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
   app.useGlobalPipes(new ValidationPipe({ skipMissingProperties: true, transform: true, whitelist: true }));
   const config = new DocumentBuilder()
-    .setTitle('Project name')
+    .setTitle('ElevatrX API')
     .setDescription('API description')
     .setVersion('1.0')
     .addBearerAuth({ type: 'http', name: 'authorization', in: 'header' }, 'authorization')
@@ -42,7 +42,7 @@ async function bootstrap() {
   EventEmitter.defaultMaxListeners = 20;
   SwaggerModule.setup('docs', app, document);
   await app.listen(PORT);
-  console.log(`Server running at port ${PORT}....`);
+  console.log(`Server running http://localhost:${PORT}/docs`);
   console.log(" ")
 }
 
