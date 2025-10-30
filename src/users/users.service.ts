@@ -19,7 +19,8 @@ export class UsersService {
 
     signup = async (dto: dto.signup) => {
         try {
-            
+            let { firstName, lastName, email, role, phone, country, password, terms, receiveNews, recaptchaToken } = dto;
+
         } catch (error) {
             throw error
         }
